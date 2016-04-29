@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>网站后台管理系统</title>
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+<script src="../include/js/jquery/jquery.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript">
+	$ = jQuery;
+	function changeAuthCode() {
+		var num = 	new Date().getTime();
+		var rand = Math.round(Math.random() * 10000);
+		num = num + rand;
+		$('#ver_code').css('visibility','visible');
+		if ($("#vdimgck")[0]) {
+			$("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+		}
+		return false;	
+	}
+</script>
+</head>
+<body>
+   <form name="form1" method="post" action="login.php">
+      <input type="hidden" name="gotopage" value="<?php if(!empty($gotopage)) echo RemoveXSS($gotopage);?>" />
+      <input type="hidden" name="dopost" value="login" />
+      <input name='adminstyle' type='hidden' value='newdedecms' />
+        <table border="0" cellpadding="0" cellspacing="0" class="login_bar">
+            <tbody>
+                <tr>
+                    <td width="330" align="right"><img src="images/logo.png" border="0" /></td>
+                    <td width="63"><img src="images/line.png" border="0" /></td>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" class="login_f">
+                            <tbody>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td id="login_msg">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td><b>账&nbsp;&nbsp;户：</b></td>
+                                    <td><input type="text" id="user" name="userid" class="adm_name" /></td>
+                                </tr>
+                                <tr>
+                                    <td><b>密&nbsp;&nbsp;码：</b></td>
+                                    <td><input type="password" id="pwd" name="pwd" class="adm_password" /></td>
+                                </tr>
+                            	   <?php
+							        	if(preg_match("/6/",$safe_gdopen))
+							        	{
+							        ?>
+								   <dt>验证码：</dt>
+								   <dd><input id="vdcode" type="text" name="validate" style="text-transform:uppercase;"/><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>
+							           <a href="#" onClick="changeAuthCode();">看不清？ </a></dd>
+									<?php
+							       		}
+									?>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <img onclick="document.getElementById('login1').click();" src="images/login_btn.png" border="0" class="login_button submit" id="login_btn" alt="登录" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+            <button type="submit" name="sm1" class="login-btn" id="login1" onclick="this.form.submit();">登录</button>
+        </table>
+    </form>
+</body>
+</html>

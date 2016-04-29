@@ -1,0 +1,40 @@
+<?php
+$z[0]=Array("global","",57,83);
+$z[0][4]['name']="cfg_webname";
+$z[1]=Array("field","",86,106);
+$z[1][4]['name']="title";
+$z[2]=Array("global","",230,257);
+$z[2][4]['name']="cfg_keywords";
+$z[3]=Array("global","",299,329);
+$z[3][4]['name']="cfg_description";
+$z[4]=Array("global","",349,381);
+$z[4][4]['name']="cfg_templets_skin";
+$z[5]=Array("global","",474,506);
+$z[5][4]['name']="cfg_templets_skin";
+$z[6]=Array("global","",578,610);
+$z[6][4]['name']="cfg_templets_skin";
+$z[7]=Array("global","",690,722);
+$z[7][4]['name']="cfg_templets_skin";
+$z[8]=Array("global","",848,880);
+$z[8][4]['name']="cfg_templets_skin";
+$z[9]=Array("global","",1673,1705);
+$z[9][4]['name']="cfg_templets_skin";
+$z[10]=Array("include","",1785,1820);
+$z[10][4]['filename']="head.htm";
+$z[11]=Array("global","",1873,1905);
+$z[11][4]['name']="cfg_templets_skin";
+$z[12]=Array("channel","\r\n                        <li><a href=\"[field:typelink/]\">[field:typename/]</a></li>\r\n                        ",2192,2449);
+$z[12][4]['type']="son";
+$z[12][4]['row']="9";
+$z[12][4]['currentstyle']="<li><a href='~typelink~' class='on'>~typename~</a></li>";
+$z[13]=Array("field","",2660,2679);
+$z[13][4]['name']="title";
+$z[14]=Array("field","",2745,2801);
+$z[14][4]['name']="pubdate";
+$z[14][4]['function']="MyDate('Y-m-d H:i',@me)";
+$z[15]=Array("field","",2884,2902);
+$z[15][4]['name']="body";
+$z[16]=Array("include","",3008,3043);
+$z[16][4]['filename']="foot.htm";
+
+?>
